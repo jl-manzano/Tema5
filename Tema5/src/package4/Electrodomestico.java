@@ -15,7 +15,7 @@ public class Electrodomestico {
 		A, B, C, D, E, F
 	}
 
-	public Electrodomestico(double precio, double peso, ColorE color, ConsumoE consumo) {
+	public Electrodomestico(double precio, double peso, String color, char consumo) {
 		if (precioB >= 100) {
 			this.precioB = precio;
 		}
@@ -24,9 +24,8 @@ public class Electrodomestico {
 			this.peso = peso;
 		}
 
-		this.color = color;
-		this.consumo = consumo;
-
+		compruebaColor(color);
+		comprobarConsumoE(consumo);
 	}
 
 	public Electrodomestico(double precio, double peso) {
@@ -42,9 +41,9 @@ public class Electrodomestico {
 
 	public boolean comprobarConsumoE(char letra) {
 		boolean res = false;
-		switch (letra) {
+		switch (Character.toUpperCase(letra)) {
 		case 'A', 'B', 'C', 'D', 'E', 'F' -> {
-			this.consumo = ConsumoE.valueOf(String.valueOf(letra));
+			this.consumo = ConsumoE.valueOf(String.valueOf(Character.toUpperCase(letra)));
 			res = true;
 		}
 
@@ -56,9 +55,9 @@ public class Electrodomestico {
 
 	public boolean compruebaColor(String color) {
 		boolean res = false;
-		switch (color) {
+		switch (color.toUpperCase()) {
 		case "BLANCO", "NEGRO", "ROJO", "AZUL", "GRIS" -> {
-			this.color = ColorE.valueOf(String.valueOf(color));
+			this.color = ColorE.valueOf(String.valueOf(color.toUpperCase()));
 			res = true;
 		}
 		}
@@ -87,8 +86,8 @@ public class Electrodomestico {
 			this.precioB += 10;
 		}
 		}
-		
-		if(this.peso > 0 && this.peso <= 19) {
+
+		if (this.peso > 0 && this.peso <= 19) {
 			this.precioB += 10;
 		} else if (this.peso >= 20 && this.peso <= 49) {
 			this.precioB += 50;
@@ -97,7 +96,7 @@ public class Electrodomestico {
 		} else if (this.peso > 80) {
 			this.precioB += 100;
 		}
-		
+
 	}
 
 	public ColorE getColor() {
@@ -135,5 +134,9 @@ public class Electrodomestico {
 			this.peso = peso;
 		}
 	}
+	
+    public String toString() {
+        return "Electrodomestico [precio=" + precioB + ", peso=" + peso + ", color=" + color + ", consumo=" + consumo + "]";
+    }
 
 }

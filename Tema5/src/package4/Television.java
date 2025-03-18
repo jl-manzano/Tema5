@@ -8,7 +8,7 @@ public class Television extends Electrodomestico {
 		super(precioB, peso);
 	}
 	
-	public Television(double precio, double peso, ColorE color, ConsumoE consumo, int resolucion, boolean sintonizadorTDT) {
+	public Television(double precio, double peso, String color, char consumo, int resolucion, boolean sintonizadorTDT) {
 		super(precio, peso, color, consumo);
 		if (resolucion >= 20) {
 			this.resolucion = resolucion;
