@@ -33,6 +33,7 @@ public abstract class Poligono {
 
 	/**
 	 * Método toString para mostrar el número de lados de un polígono
+	 * @return Devuelve el nº de lados del polígono
 	 */
 	@Override
 	public String toString() {
