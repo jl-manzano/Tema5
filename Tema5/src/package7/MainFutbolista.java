@@ -14,7 +14,7 @@ public class MainFutbolista {
 		futbolistas.add(new Futbolista(10, "Canales", 34, 30));
 		futbolistas.add(new Futbolista(4, "Johnnhy Cardoso", 23, 4));
 		futbolistas.add(new Futbolista(7, "Antony dos Santos", 25, 6));
-		futbolistas.add(new Futbolista(19, "Cucho Hernández", 25, 1));
+		futbolistas.add(new Futbolista(10, "Ez Abde", 24, 3));
 		
 		// listar con un for-each en pantalla la lista con todos los futbolistas desordenada
 		System.out.println("LISTA DESORDENADA");
