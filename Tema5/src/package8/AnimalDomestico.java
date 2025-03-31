@@ -51,7 +51,7 @@ public abstract class AnimalDomestico implements Animal {
      */
     @Override
     public void comer() {
-        System.out.println(nombre + " está comiendo.");
+        System.out.println(nombre + " está comiendo: Ñam ñam");
     }
     
     /**
