@@ -1,0 +1,33 @@
+class Ficha
+- private int id
+- private String titulo
+- public abstract int tiempoPrestamo
+
+getId()
+getTitulo()
+
+class Libro extends Ficha
+- private String autor
+- private String editorial
+
+getAutor()
+getEditorial()
+
+class Revista extends Ficha
+- private int numRevista
+- private int anyoPublicacion
+
+getNumRevista()
+getAnyoPublicacion()
+
+class DVD extends Ficha
+- private String director
+- private int anyo
+- private Tipo tipo
+- enum Tipo {
+		PELÍCULA, DOCUMENTAL, SERIE
+  }
+
+getDirector()
+getAnyo()
+getTipo()
