@@ -1,6 +1,75 @@
 class CuentaBancaria
 - private String numCuenta;
 - private double saldo;
-- TreeSet<Titular> titulares; // (min 1, max 3)
+- private Set<Titular> titulares; // (min 1, max 3)
 
-- CuentaBancaria(String numeroCuenta, double saldo, Titular t)
++ public CuentaBancaria(String numeroCuenta, double saldo, Titular t)
++ public void ingresar(double cantidad)
++ public void retirar(double cantidad)
++ public void agregarTitular(Titular t)
++ public void eliminarTitular(Titular t)
+
++ getTitulares();
++ getNumCuenta();
++ getSaldo();
+
+-------------------------------------------------------------
+
+class Titular
+- private String dni;
+- private String nombre;
+- private String apellidos;
+- private String telefono;
+
++ getDni();
++ getNombre();
++ getApellidos();
++ getTelefono();
++ setNombre();
++ setApellidos();
++ setTelefono()
+
+-------------------------------------------------------------
+
+class CuentaAhorro extends CuentaBancaria
+- private double cuotaMtto
+- private double interesAnual
+
++ public CuentaAhorro(String numeroCuenta, double saldo, Titular t, double cuotaMtto, double interesAnual)
++ public double aplicarInteres()
++ public double aplicarMtto()
+
++ getCuotaMtto();
++ getInteresAnual();
+
+-------------------------------------------------------------
+
+class CuentaCorriente extends CuentaBancaria
+- private double porcentajeT;
+- private int numTransacciones;
+- private List<Transaccion> transacciones;
+
++ public CuentaCorriente(String numCuenta, double saldo, Titular t, double porcentaje, int numTransacciones)
+
++ realizarTransaccion(Transaccion t)
+
++ getPorcentajeT();
++ getNumTransacciones();
++ getTransacciones();
+
+-------------------------------------------------------------
+
+class Transaccion
+- private int dia;
+- private int mes;
+- private int año;
+- private String concepto;
+- private double importe;
+
++ public Transaccion(int dia, int mes, int año, String concepto, double importe)
+
++ getDia();
++ getMes();
++ getAnyo();
++ getConcepto();
++ getImporte();

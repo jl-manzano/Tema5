@@ -3,22 +3,28 @@ class Ficha
 - private String titulo
 - public abstract int tiempoPrestamo
 
-getId()
-getTitulo()
++ getId()
++ getTitulo()
+
+------------------------------------
 
 class Libro extends Ficha
 - private String autor
 - private String editorial
 
-getAutor()
-getEditorial()
++ getAutor()
++ getEditorial()
+
+------------------------------------
 
 class Revista extends Ficha
 - private int numRevista
 - private int anyoPublicacion
 
-getNumRevista()
-getAnyoPublicacion()
++ getNumRevista()
++ getAnyoPublicacion()
+
+------------------------------------
 
 class DVD extends Ficha
 - private String director
@@ -28,6 +34,6 @@ class DVD extends Ficha
 		PELÍCULA, DOCUMENTAL, SERIE
   }
 
-getDirector()
-getAnyo()
-getTipo()
++ getDirector()
++ getAnyo()
++ getTipo()
