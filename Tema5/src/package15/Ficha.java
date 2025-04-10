@@ -1,6 +1,6 @@
-package package10;
+package package15;
 
-public abstract class Ficha {
+public abstract class Ficha implements Comparable<Ficha> {
 	private int id;
 	private String titulo;
 	
@@ -40,6 +40,12 @@ public abstract class Ficha {
 		ficha += "Nº Identificador: " + id + "\nTítulo: " + titulo;
 
 		return ficha;
+	}
+
+	@Override
+	public int compareTo(Ficha o) {
+		// TODO Auto-generated method stub
+		return this.id - o.id;
 	}
 	
 }

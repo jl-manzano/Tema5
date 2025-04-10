@@ -1,10 +1,10 @@
-package package11;
+package package16;
 
 import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class CuentaBancaria {
+public class CuentaBancaria implements Comparable<CuentaBancaria> {
 	private String numCuenta;
 	private double saldo;
 	private Set<Titular> titulares = new TreeSet<Titular>();
@@ -103,6 +103,12 @@ public class CuentaBancaria {
 		}
 		
 		return cuenta;
+	}
+
+	@Override
+	public int compareTo(CuentaBancaria o) {
+		// TODO Auto-generated method stub
+		return this.numCuenta.compareTo(o.numCuenta);
 	}
 
 }

@@ -1,4 +1,4 @@
-package package10;
+package package15;
 
 public class Revista extends Ficha {
 
