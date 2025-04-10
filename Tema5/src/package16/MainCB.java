@@ -100,7 +100,110 @@ public class MainCB {
 			System.out.println(c);
 		}
 
+		// comparator con lambda - saldo orden descendente
+		Comparator<CuentaBancaria> comp2 = (o1, o2) -> {
+			return (int) (o2.getSaldo() - o1.getSaldo());
+		};
+
+		// ordenar la lista con clase lambda - saldo orden descendente
+		Collections.sort(cbs, comp2);
+
+		// listar con un for-each en pantalla la lista con todos los cbs
+		// ordenada
+		System.out.println("\nLISTA ORDENADA CON LAMBDA - SALDO ORDEN DESCENDENTE");
+		for (CuentaBancaria c : cbs) {
+			System.out.println(c);
+		}
+
+		// ordenar la lista con clase a parte - saldo orden descendente
+		Collections.sort(cbs, new SaldoOrdenDesc());
+
+		// listar con un for-each en pantalla la lista con todos los cbs
+		// ordenada
+		System.out.println("\nLISTA ORDENADA CON CLASE A PARTE - SALDO ORDEN DESCENDENTE");
+		for (CuentaBancaria c : cbs) {
+			System.out.println(c);
+		}
+
 		// ORDENAR TITULARES
+		// listar con un for-each en pantalla la lista con todos los titulares
+		// desordenada
+		System.out.println("LISTA DESORDENADA");
+		for (Titular t : titulares) {
+			System.out.println(t + "\n");
+		}
+		
+		// ordenar lista (comparable)
+		Collections.sort(titulares);
+
+		// mostrar lista ordenada
+		System.out.println("\nLISTA ORDENADA:\n");
+		for (Titular t : titulares) {
+			System.out.println(t + "\n");
+		}
+
+		// comparator con clase anónima - orden por apellido / nombre ascendente
+		Comparator<Titular> comp3 = new Comparator<Titular>() {
+
+			@Override
+			public int compare(Titular o1, Titular o2) {
+				// TODO Auto-generated method stub
+
+				int res = 0;
+
+				if (o1.getApellidos().equalsIgnoreCase(o2.getApellidos())) {
+					res = o1.getNombre().compareTo(o2.getNombre());
+				} else {
+					res = o1.getApellidos().compareTo(o2.getApellidos());
+				}
+
+				return res;
+			}
+		};
+
+		// ordenar la lista con clase anónima - orden por apellido / nombre ascendente
+		Collections.sort(titulares, comp3);
+
+		// listar con un for-each en pantalla la lista con todos los titulares
+		// ordenada
+		System.out.println("\nLISTA ORDENADA CON CLASE ANÓNIMA - ORDEN POR APELLIDO / NOMBRE ASCENDENTE");
+		for (Titular t : titulares) {
+			System.out.println(t + "\n");
+		}
+
+		// comparator con lambda - orden por apellido / nombre ascendente
+		Comparator<Titular> comp4 = (o1, o2) -> {
+			int res = 0;
+
+			if (o1.getApellidos().equalsIgnoreCase(o2.getApellidos())) {
+				res = o1.getNombre().compareTo(o2.getNombre());
+			} else {
+				res = o1.getApellidos().compareTo(o2.getApellidos());
+			}
+
+			return res;
+
+		};
+
+		// ordenar la lista con lambda - orden por apellido / nombre ascendente
+		Collections.sort(titulares, comp4);
+
+		// listar con un for-each en pantalla la lista con todos los titulares
+		// ordenada
+		System.out.println("\nLISTA ORDENADA CON CLASE ANÓNIMA - ORDEN POR APELLIDO / NOMBRE ASCENDENTE");
+		for (Titular t : titulares) {
+			System.out.println(t + "\n");
+		}
+
+		// ordenar la lista con clase a parte - saldo orden descendente
+		Collections.sort(titulares, new OrdenPorApellidosONombreAsc());
+
+		// listar con un for-each en pantalla la lista con todos los titulares
+		// ordenada
+		System.out.println("\nLISTA ORDENADA CON CLASE A PARTE - ORDEN POR APELLIDO / NOMBRE ASCENDENTE");
+		for (Titular t : titulares) {
+			System.out.println(t + "\n");
+		}
 
 	}
 
