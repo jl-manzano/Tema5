@@ -1,0 +1,131 @@
+Volumen <<Interfaz>>
++ boolean subirVolumen();
++ boolean bajarVolumen();
+
+Velocidad <<Interfaz>>
++ boolean aumentarVelocidad();
++ boolean reducirVelocidad();
+
+class MandoADistancia
+- private String modelo;
+- private double anchura;
+- private double altura;
+- private double precio;
+- private boolean onOff;
+
+-------------------------
+public MandoADistancia(String modelo, double anchura, double altura, double precio, boolean onOff)
+
+-------------------------
++ getModelo()
++ getAnchura()
++ getAltura()
++ getPrecio()
++ getOnOff()
+
+-------------------------
++ setPrecio(double precio)
+
+-------------------------
++ boolean encenderMando()
++ boolean apagarMando()
+
+-------------------------
+@Override
++ public String toString()
++ public boolean equals(Object o)
++ public int hashCode()
++ public int compareTo()
+
+
+ class MandoTelevision extends MandoAdistancia implements Volumen
+ - private int volumen;
+ - private int canal;
+ ----------------------
+
+  public MandoTelevision(String modelo, double anchura, double altura, double precio, boolean onOff, int volumen, int canal)
+ 
+ -------------------------
+ + getVolumen()
+ + getCanal()
+ 
+ -------------------------
+ + setCanal(int canal)
+ 
+ -------------------------
+ + boolean subirVolumen();
+ + boolean bajarVolumen();
+ 
+  -------------------------
+ @Override
++ public String toString()
+ 
+ 
+  class MandoMinicadena extends MandoAdistancia implements Volumen
+ - private int volumen;
+ ----------------------
+
+  public MandoMinicadena(String modelo, double anchura, double altura, double precio, boolean onOff, int volumen)
+ 
+ -------------------------
+ + getVolumen()
+
+ -------------------------
+ @Override
+ + boolean subirVolumen();
+ + boolean bajarVolumen();
+ 
+ -------------------------
+ @Override
++ public String toString()
+ 
+ 
+  class MandoAspiradoras extends MandoAdistancia implements Velocidad
+ - private int velocidad = 0;
+ ----------------------
+
+  public MandoAspiradoras(String modelo, double anchura, double altura, double precio, boolean onOff, int velocidad)
+ 
+ -------------------------
+ + getVelocidad()
+ 
+ -------------------------
+  @Override
+ + boolean aumentarVelocidad();
+ + boolean reducirVelocidad();
+
+ -------------------------
+ @Override
++ public String toString()
+
+
+  class MandoAcondicionado extends MandoAdistancia implements Velocidad
+ - enum Modo {
+ FRIO, CALOR
+ }
+ 
+ - private Modo modo = Modo.FRIO;
+ - private int velocidad = 0;
+ - private int temp;
+ ----------------------
+
+  public MandoAcondicionado(String modelo, double anchura, double altura, double precio, boolean onOff, int velocidad, int temp, String modo)
+ 
+ -------------------------
+ + getModo()
+ + getVelocidad()
+ + getTemp()
+ 
+ -------------------------
+ + setTemp(int temp)
+ + setModo(String modo)
+ 
+ -------------------------
+ @Override
+ + boolean aumentarVelocidad();
+ + boolean reducirVelocidad();
+ 
+ --------------------------
+ @Override
++ public String toString()
+ 
